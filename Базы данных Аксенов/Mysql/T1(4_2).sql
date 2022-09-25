@@ -1,0 +1,16 @@
+USE FIRST;
+
+SET TRANSACTION ISOLATION LEVEL
+READ COMMITTED;
+BEGIN;
+SELECT *
+FROM Пользователь
+WHERE АдресПочты LIKE '%@mail.ru' LOCK
+IN SHARE MODE;
+
+SELECT SLEEP(10);
+
+SELECT *
+FROM Пользователь
+WHERE АдресПочты LIKE '%@mail.ru' LOCK
+IN SHARE MODE;
