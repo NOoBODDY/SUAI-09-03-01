@@ -1,0 +1,44 @@
+Quartus II
+Version 9.1 Build 222 10/21/2009 SJ Web Edition
+7
+3500
+OFF
+OFF
+OFF
+ON
+ON
+ON
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+LW3
+# storage
+db|LW3.(0).cnf
+db|LW3.(0).cnf
+# case_insensitive
+# source_file
+lw3.tdf
+b21baeec2938fb85f08f3694c3e4f0
+7
+# used_port {
+0
+-1
+0
+}
+# hierarchies {
+|
+}
+# macro_sequence
+
+# end
+# complete
+

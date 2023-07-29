@@ -1,0 +1,38 @@
+|LW3
+clk => subResult[7].IN0
+clk => subResult[6].IN0
+clk => subResult[5].IN0
+clk => subResult[4].IN0
+clk => subResult[3].IN0
+clk => subResult[2].IN0
+clk => subResult[1].IN0
+clk => subResult[0].IN0
+clk => _~10.IN0
+clk => _~12.IN0
+clk => OD~0.IN0
+clk => OG~0.IN0
+A[0] => op_1.IN15
+A[1] => op_1.IN13
+A[2] => op_1.IN11
+A[3] => op_1.IN9
+A[4] => op_1.IN7
+A[5] => op_1.IN5
+A[6] => op_1.IN3
+A[7] => op_1.IN1
+B[0] => op_1.IN16
+B[1] => op_1.IN14
+B[2] => op_1.IN12
+B[3] => op_1.IN10
+B[4] => op_1.IN8
+B[5] => op_1.IN6
+B[6] => op_1.IN4
+B[7] => op_1.IN2
+OA <= OA~0.DB_MAX_OUTPUT_PORT_TYPE
+OB <= OB~0.DB_MAX_OUTPUT_PORT_TYPE
+OC <= OC~2.DB_MAX_OUTPUT_PORT_TYPE
+OD <= OD~0.DB_MAX_OUTPUT_PORT_TYPE
+OE <= OE~2.DB_MAX_OUTPUT_PORT_TYPE
+OFF <= OFF~0.DB_MAX_OUTPUT_PORT_TYPE
+OG <= OG~0.DB_MAX_OUTPUT_PORT_TYPE
+
+

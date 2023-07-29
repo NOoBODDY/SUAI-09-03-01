@@ -1,0 +1,43 @@
+SUBDESIGN LW3(
+	clk : input;
+	A[7..0]: input;
+	B[7..0]: input;
+	OA : output;
+	OB : output;
+	OC : output;
+	OD : output;
+	OE : output;
+	OFF: output;
+	OG : output;
+	
+)
+VARIABLE
+	subResult[7..0] : NODE;
+
+BEGIN
+	if clk then
+	subResult[7..0] = A[7..0] - B[7..0];
+		if subResult[7..0] != 0  then
+			if subResult[7] == B"1" then
+				OC = B"1";
+				OE = B"0";
+			else 
+				OC = B"0";
+				OE = B"1";
+			end if;
+		end if;
+	OA = B"0";
+	OB = B"0";
+	OD = B"1";
+	OFF = B"0";
+	OG = B"1";
+	else
+	OA = B"0";
+	OB = B"0";
+	OC = B"0";
+	OD = B"1";
+	OE = B"0";
+	OFF = B"0";
+	OG = B"1";
+	end if;
+END;

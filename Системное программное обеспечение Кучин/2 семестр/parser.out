@@ -1,0 +1,376 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> Sstr
+Rule 1     Sstr -> TYPE Lstr VAR Rstr
+Rule 2     Lstr -> Tstr SEMICOLON
+Rule 3     Lstr -> Tstr SEMICOLON Lstr
+Rule 4     Tstr -> TIPE SIGN SCALAR
+Rule 5     Tstr -> TIPE SIGN Dstr
+Rule 6     Rstr -> Vstr SEMICOLON
+Rule 7     Rstr -> Vstr SEMICOLON Rstr
+Rule 8     Vstr -> Kstr COLON TIPE
+Rule 9     Vstr -> Kstr COLON SCALAR
+Rule 10    Vstr -> Kstr COLON Dstr
+Rule 11    Kstr -> TERM
+Rule 12    Kstr -> Kstr COMMA TERM
+Rule 13    Dstr -> RECORD Fstr END
+Rule 14    Fstr -> Estr SEMICOLON
+Rule 15    Fstr -> Fstr Estr SEMICOLON
+Rule 16    Estr -> Kstr COLON SCALAR
+Rule 17    Estr -> Kstr COLON TIPE
+
+Terminals, with rules where they appear
+
+COLON                : 8 9 10 16 17
+COMMA                : 12
+END                  : 13
+RECORD               : 13
+SCALAR               : 4 9 16
+SEMICOLON            : 2 3 6 7 14 15
+SIGN                 : 4 5
+TERM                 : 11 12
+TIPE                 : 4 5 8 17
+TYPE                 : 1
+VAR                  : 1
+error                : 
+
+Nonterminals, with rules where they appear
+
+Dstr                 : 5 10
+Estr                 : 14 15
+Fstr                 : 13 15
+Kstr                 : 8 9 10 12 16 17
+Lstr                 : 1 3
+Rstr                 : 1 7
+Sstr                 : 0
+Tstr                 : 2 3
+Vstr                 : 6 7
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . Sstr
+    (1) Sstr -> . TYPE Lstr VAR Rstr
+
+    TYPE            shift and go to state 2
+
+    Sstr                           shift and go to state 1
+
+state 1
+
+    (0) S' -> Sstr .
+
+
+
+state 2
+
+    (1) Sstr -> TYPE . Lstr VAR Rstr
+    (2) Lstr -> . Tstr SEMICOLON
+    (3) Lstr -> . Tstr SEMICOLON Lstr
+    (4) Tstr -> . TIPE SIGN SCALAR
+    (5) Tstr -> . TIPE SIGN Dstr
+
+    TIPE            shift and go to state 5
+
+    Lstr                           shift and go to state 3
+    Tstr                           shift and go to state 4
+
+state 3
+
+    (1) Sstr -> TYPE Lstr . VAR Rstr
+
+    VAR             shift and go to state 6
+
+
+state 4
+
+    (2) Lstr -> Tstr . SEMICOLON
+    (3) Lstr -> Tstr . SEMICOLON Lstr
+
+    SEMICOLON       shift and go to state 7
+
+
+state 5
+
+    (4) Tstr -> TIPE . SIGN SCALAR
+    (5) Tstr -> TIPE . SIGN Dstr
+
+    SIGN            shift and go to state 8
+
+
+state 6
+
+    (1) Sstr -> TYPE Lstr VAR . Rstr
+    (6) Rstr -> . Vstr SEMICOLON
+    (7) Rstr -> . Vstr SEMICOLON Rstr
+    (8) Vstr -> . Kstr COLON TIPE
+    (9) Vstr -> . Kstr COLON SCALAR
+    (10) Vstr -> . Kstr COLON Dstr
+    (11) Kstr -> . TERM
+    (12) Kstr -> . Kstr COMMA TERM
+
+    TERM            shift and go to state 12
+
+    Rstr                           shift and go to state 9
+    Vstr                           shift and go to state 10
+    Kstr                           shift and go to state 11
+
+state 7
+
+    (2) Lstr -> Tstr SEMICOLON .
+    (3) Lstr -> Tstr SEMICOLON . Lstr
+    (2) Lstr -> . Tstr SEMICOLON
+    (3) Lstr -> . Tstr SEMICOLON Lstr
+    (4) Tstr -> . TIPE SIGN SCALAR
+    (5) Tstr -> . TIPE SIGN Dstr
+
+    VAR             reduce using rule 2 (Lstr -> Tstr SEMICOLON .)
+    TIPE            shift and go to state 5
+
+    Tstr                           shift and go to state 4
+    Lstr                           shift and go to state 13
+
+state 8
+
+    (4) Tstr -> TIPE SIGN . SCALAR
+    (5) Tstr -> TIPE SIGN . Dstr
+    (13) Dstr -> . RECORD Fstr END
+
+    SCALAR          shift and go to state 14
+    RECORD          shift and go to state 16
+
+    Dstr                           shift and go to state 15
+
+state 9
+
+    (1) Sstr -> TYPE Lstr VAR Rstr .
+
+    $end            reduce using rule 1 (Sstr -> TYPE Lstr VAR Rstr .)
+
+
+state 10
+
+    (6) Rstr -> Vstr . SEMICOLON
+    (7) Rstr -> Vstr . SEMICOLON Rstr
+
+    SEMICOLON       shift and go to state 17
+
+
+state 11
+
+    (8) Vstr -> Kstr . COLON TIPE
+    (9) Vstr -> Kstr . COLON SCALAR
+    (10) Vstr -> Kstr . COLON Dstr
+    (12) Kstr -> Kstr . COMMA TERM
+
+    COLON           shift and go to state 18
+    COMMA           shift and go to state 19
+
+
+state 12
+
+    (11) Kstr -> TERM .
+
+    COLON           reduce using rule 11 (Kstr -> TERM .)
+    COMMA           reduce using rule 11 (Kstr -> TERM .)
+
+
+state 13
+
+    (3) Lstr -> Tstr SEMICOLON Lstr .
+
+    VAR             reduce using rule 3 (Lstr -> Tstr SEMICOLON Lstr .)
+
+
+state 14
+
+    (4) Tstr -> TIPE SIGN SCALAR .
+
+    SEMICOLON       reduce using rule 4 (Tstr -> TIPE SIGN SCALAR .)
+
+
+state 15
+
+    (5) Tstr -> TIPE SIGN Dstr .
+
+    SEMICOLON       reduce using rule 5 (Tstr -> TIPE SIGN Dstr .)
+
+
+state 16
+
+    (13) Dstr -> RECORD . Fstr END
+    (14) Fstr -> . Estr SEMICOLON
+    (15) Fstr -> . Fstr Estr SEMICOLON
+    (16) Estr -> . Kstr COLON SCALAR
+    (17) Estr -> . Kstr COLON TIPE
+    (11) Kstr -> . TERM
+    (12) Kstr -> . Kstr COMMA TERM
+
+    TERM            shift and go to state 12
+
+    Fstr                           shift and go to state 20
+    Estr                           shift and go to state 21
+    Kstr                           shift and go to state 22
+
+state 17
+
+    (6) Rstr -> Vstr SEMICOLON .
+    (7) Rstr -> Vstr SEMICOLON . Rstr
+    (6) Rstr -> . Vstr SEMICOLON
+    (7) Rstr -> . Vstr SEMICOLON Rstr
+    (8) Vstr -> . Kstr COLON TIPE
+    (9) Vstr -> . Kstr COLON SCALAR
+    (10) Vstr -> . Kstr COLON Dstr
+    (11) Kstr -> . TERM
+    (12) Kstr -> . Kstr COMMA TERM
+
+    $end            reduce using rule 6 (Rstr -> Vstr SEMICOLON .)
+    TERM            shift and go to state 12
+
+    Vstr                           shift and go to state 10
+    Rstr                           shift and go to state 23
+    Kstr                           shift and go to state 11
+
+state 18
+
+    (8) Vstr -> Kstr COLON . TIPE
+    (9) Vstr -> Kstr COLON . SCALAR
+    (10) Vstr -> Kstr COLON . Dstr
+    (13) Dstr -> . RECORD Fstr END
+
+    TIPE            shift and go to state 24
+    SCALAR          shift and go to state 25
+    RECORD          shift and go to state 16
+
+    Dstr                           shift and go to state 26
+
+state 19
+
+    (12) Kstr -> Kstr COMMA . TERM
+
+    TERM            shift and go to state 27
+
+
+state 20
+
+    (13) Dstr -> RECORD Fstr . END
+    (15) Fstr -> Fstr . Estr SEMICOLON
+    (16) Estr -> . Kstr COLON SCALAR
+    (17) Estr -> . Kstr COLON TIPE
+    (11) Kstr -> . TERM
+    (12) Kstr -> . Kstr COMMA TERM
+
+    END             shift and go to state 28
+    TERM            shift and go to state 12
+
+    Estr                           shift and go to state 29
+    Kstr                           shift and go to state 22
+
+state 21
+
+    (14) Fstr -> Estr . SEMICOLON
+
+    SEMICOLON       shift and go to state 30
+
+
+state 22
+
+    (16) Estr -> Kstr . COLON SCALAR
+    (17) Estr -> Kstr . COLON TIPE
+    (12) Kstr -> Kstr . COMMA TERM
+
+    COLON           shift and go to state 31
+    COMMA           shift and go to state 19
+
+
+state 23
+
+    (7) Rstr -> Vstr SEMICOLON Rstr .
+
+    $end            reduce using rule 7 (Rstr -> Vstr SEMICOLON Rstr .)
+
+
+state 24
+
+    (8) Vstr -> Kstr COLON TIPE .
+
+    SEMICOLON       reduce using rule 8 (Vstr -> Kstr COLON TIPE .)
+
+
+state 25
+
+    (9) Vstr -> Kstr COLON SCALAR .
+
+    SEMICOLON       reduce using rule 9 (Vstr -> Kstr COLON SCALAR .)
+
+
+state 26
+
+    (10) Vstr -> Kstr COLON Dstr .
+
+    SEMICOLON       reduce using rule 10 (Vstr -> Kstr COLON Dstr .)
+
+
+state 27
+
+    (12) Kstr -> Kstr COMMA TERM .
+
+    COLON           reduce using rule 12 (Kstr -> Kstr COMMA TERM .)
+    COMMA           reduce using rule 12 (Kstr -> Kstr COMMA TERM .)
+
+
+state 28
+
+    (13) Dstr -> RECORD Fstr END .
+
+    SEMICOLON       reduce using rule 13 (Dstr -> RECORD Fstr END .)
+
+
+state 29
+
+    (15) Fstr -> Fstr Estr . SEMICOLON
+
+    SEMICOLON       shift and go to state 32
+
+
+state 30
+
+    (14) Fstr -> Estr SEMICOLON .
+
+    END             reduce using rule 14 (Fstr -> Estr SEMICOLON .)
+    TERM            reduce using rule 14 (Fstr -> Estr SEMICOLON .)
+
+
+state 31
+
+    (16) Estr -> Kstr COLON . SCALAR
+    (17) Estr -> Kstr COLON . TIPE
+
+    SCALAR          shift and go to state 33
+    TIPE            shift and go to state 34
+
+
+state 32
+
+    (15) Fstr -> Fstr Estr SEMICOLON .
+
+    END             reduce using rule 15 (Fstr -> Fstr Estr SEMICOLON .)
+    TERM            reduce using rule 15 (Fstr -> Fstr Estr SEMICOLON .)
+
+
+state 33
+
+    (16) Estr -> Kstr COLON SCALAR .
+
+    SEMICOLON       reduce using rule 16 (Estr -> Kstr COLON SCALAR .)
+
+
+state 34
+
+    (17) Estr -> Kstr COLON TIPE .
+
+    SEMICOLON       reduce using rule 17 (Estr -> Kstr COLON TIPE .)
+

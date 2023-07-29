@@ -1,0 +1,9 @@
+D:/папки/09-03-01/Эльбрус/cpp/build-LR4-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/CMakeFiles/LR4.dir
+D:/папки/09-03-01/Эльбрус/cpp/build-LR4-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/CMakeFiles/edit_cache.dir
+D:/папки/09-03-01/Эльбрус/cpp/build-LR4-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/CMakeFiles/rebuild_cache.dir
+D:/папки/09-03-01/Эльбрус/cpp/build-LR4-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/CMakeFiles/list_install_components.dir
+D:/папки/09-03-01/Эльбрус/cpp/build-LR4-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/CMakeFiles/install.dir
+D:/папки/09-03-01/Эльбрус/cpp/build-LR4-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/CMakeFiles/install/local.dir
+D:/папки/09-03-01/Эльбрус/cpp/build-LR4-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/CMakeFiles/install/strip.dir
+D:/папки/09-03-01/Эльбрус/cpp/build-LR4-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/CMakeFiles/LR4_autogen_timestamp_deps.dir
+D:/папки/09-03-01/Эльбрус/cpp/build-LR4-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/CMakeFiles/LR4_autogen.dir

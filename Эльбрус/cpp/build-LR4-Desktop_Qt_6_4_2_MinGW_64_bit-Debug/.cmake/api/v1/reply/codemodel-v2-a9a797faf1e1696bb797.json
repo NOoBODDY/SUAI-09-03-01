@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-f3ec449ad0898e089d7a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "LR4",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "LR4::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-LR4-Debug-7ca17e680dea2c2b4c4d.json",
+					"name" : "LR4",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "LR4_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-LR4_autogen-Debug-8a596fd390788210589a.json",
+					"name" : "LR4_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "LR4_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-LR4_autogen_timestamp_deps-Debug-67a35d0aecd70f59f03f.json",
+					"name" : "LR4_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/\u043f\u0430\u043f\u043a\u0438/09-03-01/\u042d\u043b\u044c\u0431\u0440\u0443\u0441/cpp/build-LR4-Desktop_Qt_6_4_2_MinGW_64_bit-Debug",
+		"source" : "D:/cpp/LR4"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

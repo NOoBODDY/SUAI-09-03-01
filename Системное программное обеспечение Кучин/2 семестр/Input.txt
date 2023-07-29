@@ -1,0 +1,8 @@
+type
+        Temperature=real;
+        Address=byte;
+        Sensor=record SensType:byte;Sens:Address;Current:Temperature; end;
+    var
+        Last, First: real;
+        TMP:Sensor;
+        Needed:Temperature;
